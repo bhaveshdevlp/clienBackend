@@ -65,7 +65,9 @@ const imageRoutes = require('./routes/images');
 const app = express();
 
 // Middleware
-app.use(cors());
+ app.use(cors({
+   origin: ["https://ravina-makeover.netlify.app/" , "http://localhost:3000"]
+ }));
 app.use(express.json());
 
 // Routes - use them as middleware
