@@ -73,7 +73,9 @@ app.use(express.json());
 // Routes - use them as middleware
 app.use('/api/auth', authRoutes);
 app.use('/api/images', imageRoutes);
-
+app.get('/', (req,res)=>{
+  res.send("Vercel is working fine")
+})
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
